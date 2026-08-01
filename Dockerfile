@@ -15,7 +15,7 @@ COPY . .
 RUN uv pip install --system .
 
 # Expose port 8080 (default for Cloud Run)
-EXPOSE 8080
+EXPOSE 3000
 
 # Define the command to run the server
 # This uses the entry point defined in pyproject.toml
