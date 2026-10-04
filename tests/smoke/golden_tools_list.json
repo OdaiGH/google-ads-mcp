@@ -30,7 +30,8 @@
         ],
         "type": "object",
         "x-fastmcp-wrap-result": true
-      }
+      },
+      "title": "Customers List Accessible Customers"
     },
     {
       "_meta": {
@@ -45,6 +46,21 @@
       "inputSchema": {
         "additionalProperties": false,
         "properties": {
+          "login_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Optional manager customer ID to use as the login-customer-id header."
+          },
           "resource_name": {
             "description": "The name of the Google Ads resource (e.g., 'campaign', 'ad_group').",
             "type": "string"
@@ -59,7 +75,8 @@
       "outputSchema": {
         "additionalProperties": true,
         "type": "object"
-      }
+      },
+      "title": "Metadata Get Resource Metadata"
     },
     {
       "_meta": {
@@ -83,8 +100,15 @@
             "type": "array"
           },
           "customer_id": {
-            "description": "The id of the customer",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "description": "The id of the customer"
           },
           "fields": {
             "description": "The fields to fetch",
@@ -104,6 +128,21 @@
             ],
             "default": null,
             "description": "The maximum number of rows to return"
+          },
+          "login_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Optional manager customer ID to use as the login-customer-id header."
           },
           "orderings": {
             "default": [],
@@ -141,7 +180,8 @@
         ],
         "type": "object",
         "x-fastmcp-wrap-result": true
-      }
+      },
+      "title": "Search Search"
     }
   ]
 }
